@@ -11,15 +11,15 @@ psql -c "GRANT ALL PRIVILEGES ON DATABASE template1 TO $USER;"
 echo -e "\n---- Install tool packages ----"
 sudo DEBIAN_FRONTEND=noninteractive apt-get install wget git bzr python3-pip gdebi-core libpq-dev -y
 
-# maybe needed
-# python -m pip install --upgrade pip
+# Upgrade pip
+python -m pip install --upgrade pip
 
 echo -e "\n---- Install python packages ----"
 sudo DEBIAN_FRONTEND=noninteractive apt-get install python-dateutil python-lxml python-mako python-pyparsing python-simplejson python-tz python-werkzeug-doc python-xlwt-doc python-yaml python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-decorator python-passlib python-pil apt-utils -y
 
 if [  -n "$(lsb_release -r | grep 18)" ] || [ -n "$(lsb_release -r | grep 20)" ]; then
     # for Ubuntu 18.04 & 20.04
-    sudo DEBIAN_FRONTEND=noninteractive apt-get install python3-pypdf2 python-babel python3-babel -y
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install python3-pypdf2 python3-lxml python-babel python3-babel -y
     #sudo DEBIAN_FRONTEND=noninteractive apt-get install python3-lxml python3-yaml python3-psycopg2 python3-pil python3-psutil python3-passlib -y
 else
     # for lower than Ubuntu 18.04
@@ -65,5 +65,6 @@ pip install jinja2
 pip install reportlab
 pip install html2text
 pip install docutils
+pip install lxml
 
-./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1
+#./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1
