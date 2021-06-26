@@ -15,7 +15,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install wget git bzr python3-pip gde
 # python -m pip install --upgrade pip
 
 echo -e "\n---- Install python packages ----"
-sudo DEBIAN_FRONTEND=noninteractive apt-get install python-pypdf2 python-dateutil python-lxml python-mako python-pyparsing python-simplejson python-tz python-werkzeug-doc python-xlwt-doc python-yaml python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-decorator python-passlib python-pil apt-utils -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get install python-dateutil python-lxml python-mako python-pyparsing python-simplejson python-tz python-werkzeug-doc python-xlwt-doc python-yaml python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-decorator python-passlib python-pil apt-utils -y
 
 if [  -n "$(lsb_release -r | grep 18)" ] || [ -n "$(lsb_release -r | grep 20)" ]; then
     # for Ubuntu 18.04 & 20.04
@@ -44,7 +44,7 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git odo
 
 cd odoo
 
-pip install -r requirements.txt
+# pip install -r requirements.txt
 # Upgrade/Downgrade pip packages
 # pip install -U decorator==4.3.0
 # pip install -U python-dateutil==2.6.1
@@ -52,7 +52,18 @@ pip install -r requirements.txt
 # pip install -U requests==2.21.0
 # pip install -U Werkzeug==0.15
 
-# Status:
-# ModuleNotFoundError: No module named 'passlib'
+# Fix missing python packages
+pip install PyPDF2
+pip install passlib
+pip install babel
+pip install decorator
+pip install psycopg2
+pip install Pillow
+pip install -U Werkzeug==0.15
+pip install psutil
+pip install jinja2
+pip install reportlab
+pip install html2text
+pip install docutils
 
 ./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1
