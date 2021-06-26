@@ -54,3 +54,5 @@ pip install -r requirements.txt
 
 # Status:
 # ModuleNotFoundError: No module named 'passlib'
+
+./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1
