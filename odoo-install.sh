@@ -66,5 +66,6 @@ pip install reportlab
 pip install html2text
 pip install docutils
 pip install lxml
+pip install num2words
 
 #./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1

@@ -14,6 +14,10 @@ vscode:
 
 tasks:
   - init: |
+      sudo sed 's/peer/md5/g' /etc/postgresql/12/main/pg_hba.conf
+      sleep 1
+      pg_ctl reload
+      sleep 1
       ./odoo-install.sh
       cd odoo
       ./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1
