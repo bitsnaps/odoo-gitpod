@@ -13,9 +13,9 @@ vscode:
     - littlefoxteam.vscode-python-test-adapter@0.3.16:tZ/6xOSSdKUaq6JCUVkD+A==`
 
 tasks:
-  - init:
   - init: |
       ./odoo-install.sh
+      cd odoo
       ./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1
     command: |
       command: gp await-port 8069 && gp preview $(gp url 8069)

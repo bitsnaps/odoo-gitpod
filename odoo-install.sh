@@ -42,7 +42,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install node-clean-css node-less -y
 echo -e "\n==== Clone Odoo from repo ===="
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git odoo
 
-cd odoo
+# cd odoo
 
 # pip install -r requirements.txt
 # Upgrade/Downgrade pip packages
