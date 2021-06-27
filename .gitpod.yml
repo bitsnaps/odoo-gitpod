@@ -31,5 +31,8 @@ tasks:
 #pg_ctl stop
 #sudo pg_ctlcluster 12 main stop
 #sudo pg_ctlcluster 9.6 main start
+#sudo pg_dropcluster --stop 12 main
 #you can then login to psql with: "sudo su - postgres" then "psql" then create DBs...
 #make port 5433 public, then you'll need to run odoo with "--db_port 5433"
+
+# P.S. You should remove ":433" from the url when running the web preview.
