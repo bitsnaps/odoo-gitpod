@@ -21,7 +21,9 @@ tasks:
       ./odoo-install.sh
       cd odoo
       ./odoo-bin -w odoo11 -r odoo11 --addons-path=./addons --db_host 127.0.0.1
-    command: gp await-port 8069 && gp preview $(gp url 8069)
+    command: gp await-port 8069 && gp preview
+
+# command: gp await-port 8069 && gp preview $(gp url 8069)
 
 #sudo apt install wget curl ca-certificates
 #wget -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
