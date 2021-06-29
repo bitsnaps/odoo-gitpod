@@ -10,8 +10,8 @@ psql -c "GRANT ALL PRIVILEGES ON DATABASE template0 TO $USER;"
 psql -c "GRANT ALL PRIVILEGES ON DATABASE template1 TO $USER;"
 
 # Create a database
-psql -c "CREATE DATABASE $DB_NAME WITH OWNER $USER;"
-psql -c "GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $USER;"
+# psql -c "CREATE DATABASE $DB_NAME WITH OWNER $USER;"
+# psql -c "GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $USER;"
 
 echo -e "\n---- Install tool packages ----"
 sudo DEBIAN_FRONTEND=noninteractive apt-get install wget git bzr python3-pip gdebi-core libpq-dev -y
