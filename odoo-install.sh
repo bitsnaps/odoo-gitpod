@@ -50,59 +50,13 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git odo
 cd odoo
 
 pip install -U -r requirements.txt
-# from requirements.txt
-# pip install ebaysdk==2.1.5
-# pip install feedparser==5.2.1
-# pip install gevent==1.5.0
-# pip install greenlet==0.4.14
-# pip install lxml==4.2.3
-# pip install Mako==1.0.4
-# pip install MarkupSafe==0.23
-# pip install mock==2.0.0
-# pip install ofxparse==0.16
-# pip install passlib==1.6.5
-# pip install phonenumbers
-# pip install pydot==1.2.3
-# pip install pyldap==2.4.28
-# pip install pyparsing==2.1.10
-# pip install PyPDF2==1.26.0
-# pip install pyserial==3.1.1
-# pip install python-dateutil==2.5.3
-# pip install python-stdnum<=1.14
-# pip install pytz==2016.7
-# pip install pyusb==1.0.0
-# pip install PyYAML==3.13
-# pip install qrcode==5.3
-# pip install requests==2.20.0
-# pip install suds-jurko==0.6
-# pip install vatnumber==1.2
-# pip install vobject==0.9.3
-# pip install XlsxWriter==0.9.3
-# pip install xlwt==1.3.*
-# pip install xlrd==1.0.0
 
 # Upgrade/Downgrade pip packages
-pip install -U decorator==4.3.0
-pip install -U python-dateutil==2.6.1
-pip install -U pytz==2017.2
-pip install -U requests==2.21.0
-pip install -U Werkzeug==0.15
-
-# Fix missing python packages
-# pip install PyPDF2
-# pip install passlib
-# pip install babel
-# pip install decorator
-# pip install psycopg2
-# pip install Pillow
+# pip install -U decorator==4.3.0
+# pip install -U python-dateutil==2.6.1
+# pip install -U pytz==2017.2
+# pip install -U requests==2.21.0
 # pip install -U Werkzeug==0.15
-# pip install psutil
-# pip install jinja2
-# pip install reportlab
-# pip install html2text
-# pip install docutils
-# pip install lxml
-# pip install num2words
 
 #./odoo-bin -w odoo11 -r odoo11 --addons-path=./addons --db_host 127.0.0.1
 # run with db:
