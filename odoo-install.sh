@@ -15,9 +15,10 @@ psql -c "GRANT ALL PRIVILEGES ON DATABASE template1 TO $USER;"
 
 
 # Upgrade pip
-python -m python -m pip install --upgrade pip
+python -m pip install --upgrade pip
 
 echo -e "\n==== Clone Odoo from repo ===="
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git odoo
 
+pip install wheel
 pip install -U -r ./odoo/requirements.txt

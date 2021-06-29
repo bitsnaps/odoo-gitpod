@@ -17,7 +17,7 @@ tasks:
       ./odoo-install.sh
     command: |
       cd odoo && ./odoo-bin -w odoo11 -r odoo11 --addons-path=./addons --db_host 127.0.0.1
-  - command: gp await-port 8069 && gp preview "$(gp url 8069)/web/login"
+  - command: gp await-port 8069 && gp preview "$(gp url 8069)/database/selector"
 
 # P.S. You should remove ":433" from the url when running the web preview.
 
