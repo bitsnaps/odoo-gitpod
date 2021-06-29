@@ -1,12 +1,17 @@
 OE_VERSION="11.0"
 USER="odoo11"
 PASSWD="odoo11"
-#DB_NAME="odoodb"
+DB_NAME="odoodb"
 
+# Create a DB user
 psql -c "create user $USER with encrypted password '$PASSWD';"
 psql -c "ALTER ROLE $USER WITH SUPERUSER;"
 psql -c "GRANT ALL PRIVILEGES ON DATABASE template0 TO $USER;"
 psql -c "GRANT ALL PRIVILEGES ON DATABASE template1 TO $USER;"
+
+# Create a database
+psql -c "CREATE DATABASE $DB_NAME WITH OWNER $USER;"
+psql -c "GRANT ALL PRIVILEGES ON DATABASE $DB_NAME TO $USER;"
 
 echo -e "\n---- Install tool packages ----"
 sudo DEBIAN_FRONTEND=noninteractive apt-get install wget git bzr python3-pip gdebi-core libpq-dev -y
@@ -47,17 +52,4 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install node-clean-css node-less -y
 echo -e "\n==== Clone Odoo from repo ===="
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git odoo
 
-# cd odoo
-
 pip install -U -r ./odoo/requirements.txt
-
-# Upgrade/Downgrade pip packages
-# pip install -U decorator==4.3.0
-# pip install -U python-dateutil==2.6.1
-# pip install -U pytz==2017.2
-# pip install -U requests==2.21.0
-# pip install -U Werkzeug==0.15
-
-#./odoo-bin -w odoo11 -r odoo11 --addons-path=./addons --db_host 127.0.0.1
-# run with db:
-#./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1

@@ -14,12 +14,9 @@ vscode:
 
 tasks:
   - init: |
-      sudo sed 's/peer/md5/g' /etc/postgresql/12/main/pg_hba.conf
-      sleep 1
-      pg_ctl reload
       ./odoo-install.sh
     command: |
-      cd odoo && ./odoo-bin -w odoo11 -r odoo11 --addons-path=./addons --db_host 127.0.0.1
+      cd odoo && ./odoo-bin -w odoo11 -r odoo11 -d odoodb --addons-path=./addons --db_host 127.0.0.1
   - command: gp await-port 8069 && gp preview $(gp url 8069)
 
 #sudo apt install wget curl ca-certificates
@@ -37,15 +34,11 @@ tasks:
 
 # P.S. You should remove ":433" from the url when running the web preview.
 
-# Create a database
-#CREATE DATABASE odoo11_db WITH OWNER odoo11;
-#GRANT ALL PRIVILEGES ON DATABASE odoo11_db TO odoo11;
-
 # Run with database:
-#./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1
+#./odoo-bin -w odoo11 -r odoo11 -d odoodb --addons-path=./addons --db_host 127.0.0.1
 
 # Run with different PostgreSQL port:
 #./odoo-bin -w odoo11 -r odoo11 --addons-path=./addons --db_host 127.0.0.1 --db_port 5433
 
 # Run and init a database:
-#./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1 -i base
+#./odoo-bin -w odoo11 -r odoo11 -d odoodb --addons-path=./addons --db_host 127.0.0.1 -i base
