@@ -21,9 +21,7 @@ tasks:
       ./odoo-install.sh
       cd odoo
       ./odoo-bin -w odoo11 -r odoo11 --addons-path=./addons --db_host 127.0.0.1
-    command: gp await-port 8069 && gp preview
-
-# command: gp await-port 8069 && gp preview $(gp url 8069)
+    command: gp await-port 8069 && gp preview $(gp url 8069)
 
 #sudo apt install wget curl ca-certificates
 #wget -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -38,3 +36,16 @@ tasks:
 #make port 5433 public, then you'll need to run odoo with "--db_port 5433"
 
 # P.S. You should remove ":433" from the url when running the web preview.
+
+# Create a database
+#CREATE DATABASE odoo11_db WITH OWNER odoo11;
+#GRANT ALL PRIVILEGES ON DATABASE odoo11_db TO odoo11;
+
+# Run with database:
+#./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1
+
+# Run with different PostgreSQL port:
+#./odoo-bin -w odoo11 -r odoo11 --addons-path=./addons --db_host 127.0.0.1 --db_port 5433
+
+# Run and init a database:
+#./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1 -i base
