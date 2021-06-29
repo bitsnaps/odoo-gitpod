@@ -19,19 +19,6 @@ tasks:
       cd odoo && ./odoo-bin -w odoo11 -r odoo11 --addons-path=./addons --db_host 127.0.0.1
   - command: gp await-port 8069 && gp preview $(gp url 8069)
 
-#sudo apt install wget curl ca-certificates
-#wget -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-#sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
-#sudo apt update
-#sudo apt-get install postgresql-9.6 postgresql-contrib-9.6 -y
-#pg_ctl stop
-#sudo pg_ctlcluster 12 main stop
-#sudo pg_ctlcluster 9.6 main start
-#sudo pg_dropcluster --stop 12 main
-#sudo sed 's/peer/md5/g' /etc/postgresql/9.6/main/pg_hba.conf
-#you can then login to psql with: "sudo su - postgres" then "psql" then create DBs...
-#make port 5433 public, then you'll need to run odoo with "--db_port 5433"
-
 # P.S. You should remove ":433" from the url when running the web preview.
 
 # Create a database
