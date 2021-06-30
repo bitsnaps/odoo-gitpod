@@ -1,7 +1,7 @@
 OE_VERSION="12.0"
 USER="odoo12"
 PASSWD="odoo12"
-# DB_NAME="odoo11_db"
+# DB_NAME="odoo12_db"
 
 # Create a DB user
 psql -c "create user $USER with encrypted password '$PASSWD';"
@@ -21,5 +21,4 @@ echo -e "\n==== Clone Odoo from repo ===="
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git odoo
 
 pip install wheel
-pip install num2words ofxparse
 pip install -U -r ./odoo/requirements.txt

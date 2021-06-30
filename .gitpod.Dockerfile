@@ -12,7 +12,10 @@ RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install git python3 python3-pip 
 # --- Install other required packages (node, less) ----
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install nodejs npm -y
 
+RUN sudo npm install postcss
 RUN sudo npm install -g rtlcss
+# May cause: npm WARN rtlcss@3.2.1 requires a peer of postcss@^8.2.4 but none is installed. You must install peer dependencies yourself.
+
 RUN sudo npm install -g less-plugin-clean-css
 
 RUN pyenv install 3.7.10
