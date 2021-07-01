@@ -1,6 +1,17 @@
 image:
   file: .gitpod.Dockerfile
 
+# exposed ports
+ports:
+- port: 5432 # PostgreSQL
+  onOpen: notify
+- port: 8069 # preview on browser
+  onOpen: open-browser
+
 tasks:
-  - init: echo "Replace me with a build script for the project."
-    command: odoo -r gitpod --addons-path=/workspace -d template1 -i base -D /workspace/.odoo
+  - init: |
+      pip install num2words
+      echo "Replace me with a build script for the project."
+    command: |
+      odoo -r gitpod --addons-path=/workspace -D /workspace/.odoo --db_host 127.0.0.1
+  - command: gp await-port 8069 && gp preview "$(gp url 8069)/web/database/selector"
