@@ -28,6 +28,6 @@ RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install python3-suds -y
 # --- Install other required packages (node, less) ----
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install node-clean-css node-less -y
 
-
-RUN pyenv install 3.7.10
-RUN pyenv global 3.7.10
+# the default python should work
+# RUN pyenv install 3.7.10
+# RUN pyenv global 3.7.10

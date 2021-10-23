@@ -4,7 +4,7 @@ image:
 # exposed ports
 ports:
 - port: 5432 # PostgreSQL
-  onOpen: notify
+  onOpen: ignore
 - port: 8069 # preview on browser
   onOpen: open-browser
 
@@ -19,14 +19,14 @@ tasks:
 # P.S. You should remove ":433" from the url when running the web preview.
 
 # Create a database
-#CREATE DATABASE odoo11_db WITH OWNER odoo11;
-#GRANT ALL PRIVILEGES ON DATABASE odoo11_db TO odoo11;
+#CREATE DATABASE odoo15_db WITH OWNER odoo15;
+#GRANT ALL PRIVILEGES ON DATABASE odoo15_db TO odoo15;
 
 # Run with database:
-#./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1
+#./odoo-bin -w odoo15 -r odoo15 -d odoo15_db --addons-path=./addons --db_host 127.0.0.1
 
 # Run with different PostgreSQL port:
-#./odoo-bin -w odoo11 -r odoo11 --addons-path=./addons --db_host 127.0.0.1 --db_port 5433
+#./odoo-bin -w odoo15 -r odoo15 --addons-path=./addons --db_host 127.0.0.1 --db_port 5433
 
 # Run and init a database:
-#./odoo-bin -w odoo11 -r odoo11 -d odoo11_db --addons-path=./addons --db_host 127.0.0.1 -i base
+#./odoo-bin -w odoo15 -r odoo15 -d odoo15_db --addons-path=./addons --db_host 127.0.0.1 -i base
