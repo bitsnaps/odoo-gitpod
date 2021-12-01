@@ -1,7 +1,7 @@
-OE_VERSION="15.0"
-USER="odoo15"
-PASSWD="odoo15"
-# DB_NAME="odoo15_db"
+OE_VERSION="13.0"
+USER="odoo13"
+PASSWD="odoo13"
+# DB_NAME="odoo13_db"
 
 # Create a DB user
 psql -c "create user $USER with encrypted password '$PASSWD';"
