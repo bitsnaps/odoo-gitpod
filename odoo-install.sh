@@ -20,5 +20,7 @@ python -m pip install --upgrade pip
 echo -e "\n==== Clone Odoo from repo ===="
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git odoo
 
+cd odoo
 pip install wheel
-pip install -U -r ./odoo/requirements.txt
+pip install setuptools==57 # downgrade setuptools to support use_2to3
+pip install -U -r requirements.txt
