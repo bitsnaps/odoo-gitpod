@@ -20,5 +20,10 @@ python -m pip install --upgrade pip
 echo -e "\n==== Clone Odoo from repo ===="
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git odoo
 
+cd odoo
+echo -e "\n==== Install Addons ===="
+sudo mkdir custom && cd custom
+sudo git clone --depth 1 --branch $OE_VERSION https://github.com/guohuadeng/app-odoo.git sunpop
+
 pip install wheel
 pip install -U -r ./odoo/requirements.txt
