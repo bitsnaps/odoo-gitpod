@@ -1,7 +1,7 @@
-OE_VERSION="13.0"
-USER="odoo13"
-PASSWD="odoo13"
-# DB_NAME="odoo13_db"
+OE_VERSION="14.0"
+USER="odoo14"
+PASSWD="odoo14"
+# DB_NAME="odoo14_db"
 
 # Create a DB user
 psql -c "create user $USER with encrypted password '$PASSWD';"
@@ -22,5 +22,4 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git odo
 
 cd odoo
 pip install wheel
-pip install setuptools==57 # downgrade setuptools to support use_2to3
 pip install -U -r requirements.txt
