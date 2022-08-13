@@ -22,4 +22,5 @@ sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git odo
 
 cd odoo
 pip install wheel
+pip uninstall twine # cause conflicts
 pip install -U -r requirements.txt
