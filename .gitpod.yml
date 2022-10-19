@@ -14,20 +14,20 @@ tasks:
       ./odoo-install.sh
     command: |
       cd odoo
-      ./odoo-bin -w odoo15 -r odoo15 --addons-path=./addons --db_host 127.0.0.1
+      ./odoo-bin -w odoo16 -r odoo16 --addons-path=./addons --db_host 127.0.0.1
   - command: gp await-port 8069 && gp preview "$(gp url 8069)/web/database/selector"
 
 # P.S. You should remove ":433" from the url when running the web preview.
 
 # Create a database
-#CREATE DATABASE odoo15_db WITH OWNER odoo15;
-#GRANT ALL PRIVILEGES ON DATABASE odoo15_db TO odoo15;
+#CREATE DATABASE odoo16_db WITH OWNER odoo16;
+#GRANT ALL PRIVILEGES ON DATABASE odoo16_db TO odoo16;
 
 # Run with database:
-#./odoo-bin -w odoo15 -r odoo15 -d odoo15_db --addons-path=./addons --db_host 127.0.0.1
+#./odoo-bin -w odoo16 -r odoo16 -d odoo16_db --addons-path=./addons --db_host 127.0.0.1
 
 # Run with different PostgreSQL port:
-#./odoo-bin -w odoo15 -r odoo15 --addons-path=./addons --db_host 127.0.0.1 --db_port 5433
+#./odoo-bin -w odoo16 -r odoo16 --addons-path=./addons --db_host 127.0.0.1 --db_port 5433
 
 # Run and init a database:
-#./odoo-bin -w odoo15 -r odoo15 -d odoo15_db --addons-path=./addons --db_host 127.0.0.1 -i base
+#./odoo-bin -w odoo16 -r odoo16 -d odoo16_db --addons-path=./addons --db_host 127.0.0.1 -i base
